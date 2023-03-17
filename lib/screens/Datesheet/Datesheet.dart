@@ -11,7 +11,12 @@ class DateSheetScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('DateSheet'),
+        flexibleSpace: Container(
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  colors: [Colors.orangeAccent, Colors.deepOrange])),
+        ),
+        title: Text('DateSheet',style: Theme.of(context).textTheme.titleMedium,),
       ),
       body: Container(
         width: 100.w,
@@ -52,10 +57,14 @@ class DateSheetScreen extends StatelessWidget {
                             Theme.of(context).textTheme.titleSmall!.copyWith(
                               color: kTextBlackColor,
                               fontWeight: FontWeight.w900,
+                              fontSize: 18
                             ),
                           ),
                           Text(dateSheet[index].monthName,
-                              style: Theme.of(context).textTheme.bodySmall),
+                              style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                                fontSize: 17,
+                                color: Colors.black54
+                              )),
                         ],
                       ),
 
@@ -73,7 +82,10 @@ class DateSheetScreen extends StatelessWidget {
                             ),
                           ),
                           Text(dateSheet[index].dayName,
-                              style: Theme.of(context).textTheme.bodySmall),
+                              style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                                fontSize: 15,
+                                fontWeight: FontWeight.w800
+                              )),
                         ],
                       ),
                       //3rd one
@@ -83,7 +95,10 @@ class DateSheetScreen extends StatelessWidget {
                         children: [
                           Text(
                             '🕒${dateSheet[index].time}',
-                            style: Theme.of(context).textTheme.bodySmall,
+                            style: Theme.of(context).textTheme.bodySmall!.copyWith(
+                                fontSize: 15,
+                                fontWeight: FontWeight.w800
+                            ),
                           ),
                         ],
                       ),

@@ -10,10 +10,9 @@ class DataSheet {
 }
 
 List<DataSheet> dateSheet = [
-  DataSheet(11, 'JAN', 'Computer Science', 'Monday', '9:00am'),
-  DataSheet(12, 'JAN', 'Biology', 'Tuesday', '10:00am'),
-  DataSheet(13, 'JAN', 'Chemistry', 'Wednesday', '9:30am'),
-  DataSheet(14, 'JAN', 'Physics', 'Thursday', '11:00am'),
+  DataSheet(11, 'JAN', 'Machine Learning', 'Monday', '9:00am'),
+  DataSheet(12, 'JAN', 'Photoshop', 'Tuesday', '10:00am'),
+  DataSheet(13, 'JAN', 'Current Trends', 'Wednesday', '9:30am'),
+  DataSheet(14, 'JAN', 'Analytical', 'Thursday', '11:00am'),
   DataSheet(15, 'JAN', 'Mathematics', 'Friday', '9:00am'),
-  DataSheet(16, 'JAN', 'Urdu', 'Saturday', '11:00am'),
 ];
