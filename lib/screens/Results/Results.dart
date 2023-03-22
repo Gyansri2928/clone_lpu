@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:touch_clone/screens/Results/result_data/result_components.dart';
+import 'package:percent_indicator/circular_percent_indicator.dart';
+//import 'package:touch_clone/screens/Results/result_data/result_components.dart';
 import 'package:touch_clone/screens/Results/result_data/result_data.dart';
 import 'package:sizer/sizer.dart';
 import 'package:touch_clone/screens/colors.dart';
+
 
 class ResultScreen extends StatelessWidget {
   const ResultScreen({Key? key}) : super(key: key);
 static String routeName = 'ResultScreen';
 
+
+
   @override
   Widget build(BuildContext context) {
+    double percent = (289/400)*100 ;
     return Container(
       decoration: const BoxDecoration(
         gradient: LinearGradient(
@@ -19,6 +24,7 @@ static String routeName = 'ResultScreen';
             ]),
       ),
       child: Scaffold(
+
             appBar: AppBar(
 
               flexibleSpace: Container(
@@ -44,21 +50,17 @@ static String routeName = 'ResultScreen';
                 width: MediaQuery.of(context).size.width,
                 height: 210,
                 margin: const EdgeInsets.all(8),
-                child: CustomPaint(
-                  foregroundPainter: CircularPainter(
-                    backgroundColor: Colors.transparent,
-                    limeColor: kOtherColor,
-                    width: 5.w
-                  ),
-                  child: Center(
-                    child: Text('289\n\t    / \n\t    400',
-                    style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white
-                    ),)
-                  ),
-                ),
+                child:CircularPercentIndicator(
+                  radius: 100,
+                  animation: true,
+                  backgroundColor: Colors.white,
+                  animationDuration: 1000,
+                  lineWidth: 18,
+                  percent: 0.8,
+                  center: Text("$percent%",style: TextStyle(fontSize: 35),),
+                  circularStrokeCap: CircularStrokeCap.round,
+                  progressColor: Colors.lightGreen,
+                )
 
               ),),
                sizedBox,
